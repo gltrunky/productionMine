@@ -12,7 +12,7 @@ let productionSec = 3;
 let niveauStockage = 1;
 let stockageMax = 499;
 let agrandissementMine = 50;
-let agrandissementStock = 1000;
+let agrandissementStock = 500;
 
 // Fonction Agrandissement de la mine
 document.querySelector('#levelUp').addEventListener(
@@ -67,7 +67,6 @@ document.querySelector('#levelUp').addEventListener(
 );
 
 //Fonction Agrandissement du stock de la mine
-
 document.querySelector('#levelUpStock').addEventListener(
 'click', function(){
   if(niveauStockage == 1 && matiereVerte>=500){
@@ -75,10 +74,10 @@ document.querySelector('#levelUpStock').addEventListener(
     stockageMax = stockageMax + 500;
     matiereVerte = matiereVerte - 500;
     stock.textContent = stockageMax+1;
-    coutStock.textContent = agrandissementStock + 1000 + ' Mv';
+    coutStock.textContent = agrandissementStock + 500 + ' Mv';
   }
   else if(niveauStockage == 1 && matiereVerte<500){
-    alert('Il vous faut 1000 Mv pour passer au niveau 2 du stockage de la mine de matiere verte.')
+    alert('Il vous faut 500 Mv pour passer au niveau 2 du stockage de la mine de matiere verte.')
   }
 }
 );
