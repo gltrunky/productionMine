@@ -4,6 +4,7 @@ let stock = document.querySelector('#stock');
 let prodSec = document.querySelector('#prodSec');
 let coutMine = document.querySelector('#coutMine');
 let coutStock = document.querySelector('#coutStock');
+let niveauEntrepot = document.querySelector('#levelEntrepot');
 
 // Déclaration des variables
 let matiereVerte = 0;
@@ -75,10 +76,50 @@ document.querySelector('#levelUpStock').addEventListener(
     matiereVerte = matiereVerte - 500;
     stock.textContent = stockageMax+1;
     coutStock.textContent = agrandissementStock + 500 + ' Mv';
+    niveauEntrepot.textContent = niveauStockage;
   }
-  else if(niveauStockage == 1 && matiereVerte<500){
+  else if(niveauStockage==1 && matiereVerte<500){
     alert('Il vous faut 500 Mv pour passer au niveau 2 du stockage de la mine de matiere verte.')
   }
+  else if(niveauStockage==2 && matiereVerte>=1000){
+    niveauStockage++;
+    stockageMax = stockageMax + 1000;
+    matiereVerte = matiereVerte - 1000;
+    stock.textContent = stockageMax+1;
+    coutStock.textContent = agrandissementStock + 1500 + ' Mv';
+    niveauEntrepot.textContent = niveauStockage;
+  }
+  else if(niveauStockage==2 && matiereVerte<1000){
+    alert('Il vous faut 1000 Mv pour passer au niveau 3 du stockage de la mine de matiere verte.')
+  }
+  else if(niveauStockage==3 && matiereVerte>=2000){
+    niveauStockage++;
+    stockageMax = stockageMax + 2000;
+    matiereVerte = matiereVerte - 2000;
+    stock.textContent = stockageMax+1;
+    coutStock.textContent = agrandissementStock + 3500 + ' Mv';
+    niveauEntrepot.textContent = niveauStockage;
+  }
+  else if(niveauStockage==3 && matiereVerte<2000){
+    alert('Il vous faut 2000 Mv pour passer au niveau 4 du stockage de la mine de matiere verte.')
+  }
+  else if(niveauStockage==4 && matiereVerte>=4000){
+    niveauStockage++;
+    stockageMax = stockageMax + 6000;
+    matiereVerte = matiereVerte - 4000;
+    stock.textContent = stockageMax+1;
+    coutStock.textContent = 'Niv Max atteint';
+    niveauEntrepot.textContent = niveauStockage;
+  }
+  else if(niveauStockage==4 && matiereVerte<4000){
+    alert('Il vous faut 4000 Mv pour passer au niveau 5 du stockage de la mine de matiere verte.')
+  }
+  else if(niveauStockage>=5){
+    alert('Niveau de l\'entrepot de la matiere verte au maximum');
+    niveauStockage = 5
+    niveauEntrepot.textContent = niveauStockage;
+  }
+
 }
 );
 
@@ -119,4 +160,5 @@ stock.textContent = stockageMax + 1;
 prodSec.textContent = productionSec;
 coutMine.textContent = agrandissementMine + ' Mv';
 coutStock.textContent = agrandissementStock + ' Mv';
+niveauEntrepot.textContent = niveauStockage;
 setInterval("production()", 1000);

@@ -22,38 +22,85 @@
                 </a>
             </nav>  
             <nav aria-label="breadcrumb" class="navbar navbar-light bg-light shadow">
-                <button type="button" class="btn btn-lg btn-success"><span id="ressources"></span> Mv<br>P/s: <span id="prodSec"></span></button>
-                <button type="button" class="btn btn-lg btn-danger ml-2"><span id="ressourcesR"></span>Mr<br>P/s: <span id="prodSecR"></span></button>
                 <ol class="breadcrumb ml-auto">
                     <li class="breadcrumb-item" aria-current="page"><i class="fas fa-home"></i></li>
                     <li class="breadcrumb-item"><a href="#">Technologie</a></li>
                     <li class="breadcrumb-item"><a href="#">Contact</a></li>
                 </ol>
             </nav>
-       </header>
-       <main class="row">
+        </header>
+        <!-- Production -->
+       <h2 class="text-center mt-5 mb-5 bg-dark text-white shadow p-3">Production :</h2>
+       <div class="row">
+           <!-- Production matiére verte -->
         <div class="card text-white bg-success mb-3 mt-3 ml-3" style="max-width: 18rem;">
             <div class="card-header text-center">
-                <p class="card-text text-center">Mine de matiére verte (<span id="level"></span>)</p>
+                <button type="button" class="btn btn-lg btn-success"><span id="ressources"></span> Mv</button>
             </div>
             <div class="card-body text-center">
-                <button type="button" class="btn btn-primary" id="levelUp">Agrandir mine <br><span id="coutMine"></span></button>
-                <p class="card-text text-center mt-3">Stock max : <span id="stock"></span></p>
-              <button type="button" class="btn btn-primary" id="levelUpStock">Agrandir stock <br><span id="coutStock"></span></button>
+                <button type="button" class="btn btn-lg btn-success">P/s: <span id="prodSec"></span></button>
+            </div>
+          </div>
+          <!-- Production matiére rouge -->
+        <div class="card text-white bg-danger mb-3 mt-3 ml-3" style="max-width: 18rem;">
+            <div class="card-header text-center">
+                <button type="button" class="btn btn-lg btn-danger"><span id="ressourcesR"></span> Mv</button>
+            </div>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-lg btn-danger">P/s: <span id="prodSecR"></span></button>
             </div>
           </div>
 
+        </div>
+       <!-- Gestion Mine -->
+       <h2 class="text-center mt-5 mb-5 bg-dark text-white shadow p-3">Gestion des mines :</h2>
+       <div class="row">
+           <!-- Mine matiére verte -->
+        <div class="card text-white bg-success mb-3 mt-3 ml-3" style="max-width: 18rem;">
+            <div class="card-header text-center">
+                <p class="card-text text-center">Mine de la matiére verte (<span id="level"></span>)</p>
+            </div>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-primary" id="levelUp">Agrandir mine <br><span id="coutMine"></span></button>
+            </div>
+          </div>
+          <!-- Mine matiére rouge -->
           <div class="card text-white bg-danger mb-3 mt-3 ml-2" style="max-width: 18rem;">
             <div class="card-header text-center">
-                <p class="card-text text-center">Mine de matiére rouge (<span id="levelR">0</span>)</p>
+                <p class="card-text text-center">Mine de la matiére rouge (<span id="levelR">0</span>)</p>
             </div>
             <div class="card-body text-center">
                 <button type="button" class="btn btn-primary" id="levelUpR">Agrandir <br><span id="coutMineR"></span></button>
-                <p class="card-text text-center">Stock max : <span id="stockR"></span></p>
-              <button type="button" class="btn btn-primary" id="levelUpStockR">Agrandir stock <br>(1500 Mr)</button>
             </div>
           </div>
-       </main>
+
+        </div>
+
+        <!-- Gestion Entrepot -->
+        <h2 class="text-center mt-5 mb-5 bg-dark text-white shadow p-3">Gestion des entrepots :</h2>
+        <div class="row">
+            <!-- Entreport Matiere Verte -->
+        <div class="card text-white bg-success mb-3 mt-3 ml-3" style="max-width: 18rem;">
+            <div class="card-header text-center">
+                <p class="card-text text-center">Entrepot de la matiére verte (<span id="levelEntrepot"></span>)</p>
+            </div>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-primary" id="levelUpStock">Agrandir stock <br><span id="coutStock"></span></button>
+                <p class="card-text text-center mt-3">Stock max : <span id="stock"></span></p>
+            </div>
+          </div>
+        <!-- Entreport Matiere Rouge -->
+          <div class="card text-white bg-danger mb-3 mt-3 ml-3" style="max-width: 18rem;">
+            <div class="card-header text-center">
+                <p class="card-text text-center">Entrepot de la matiére rouge (<span id="levelEntrepotR"></span>)</p>
+            </div>
+            <div class="card-body text-center">
+                <button type="button" class="btn btn-primary" id="levelUpStockR">Agrandir stock <br><span id="coutStockR"></span></button>
+                <p class="card-text text-center mt-3">Stock max : <span id="stockR"></span></p>
+            </div>
+          </div>
+
+        </div>
     </div>
     <!-- Js Global -->
     <script src="/components/js/style.js"></script>
